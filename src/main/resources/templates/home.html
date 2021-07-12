@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+      layout:decorate="layout/_main">
+<body>
+
+  <div layout:fragment="content">
+    <div class="box">
+      <p sec:authentication="principal.username"></p>
+      <a sec:authorize="isAuthenticated()" th:href="@{/logout}">logout</a>
+    </div>
+
+    <p>Home</p>
+  </div>
+
+</body>
+</html>
