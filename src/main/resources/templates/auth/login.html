@@ -1,46 +1,56 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="layout/_main">
+      layout:decorate="layout/_blank">
 <body>
 
   <div layout:fragment="content">
-    <div class="row justify-content-center">
-      <div class="card col-4">
-        <div class="card-body">
-          <h5 class="card-title">Login</h5>
+    <div class="account-pages my-5 pt-sm-5">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6 col-xl-5">
+            <div class="card overflow-hidden">
+              <div class="card-body">
+                <h5 class="card-title text-center">Login</h5>
 
-          <p class="text-danger"
-             th:if="${param.error}"
-          >
-            Invalid username or password
-          </p>
+                <p class="text-danger"
+                   th:if="${param.error}"
+                >
+                  Invalid username or password
+                </p>
 
-          <form th:action="@{/login}" method="post">
-            <div class="form-group">
-              <label for="username" class="control-label">Email</label>
-              <input type="email"
-                     class="form-control"
-                     id="username"
-                     name="username"
-                     autofocus
-              >
+                <form class="form-horizontal" th:action="@{/login}" method="post">
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Email</label>
+                    <input type="email"
+                           class="form-control"
+                           id="username"
+                           name="username"
+                           autofocus
+                    >
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password"
+                           class="form-control"
+                           id="password"
+                           name="password"
+                    >
+                  </div>
+
+                  <div class="mt-3 d-grid">
+                    <button class="btn btn-primary waves-effect waves-light" type="submit">Login</button>
+                  </div>
+                </form>
+              </div>
             </div>
-
-            <div class="form-group">
-              <label for="password" class="control-label"></label>
-              <input type="password"
-                     class="form-control"
-                     id="password"
-                     name="password"
-              >
+            <div class="mt-5 text-center">
+              <div>
+                <p>&copy; <script>document.write(new Date().getFullYear())</script> Bananaleaf</p>
+              </div>
             </div>
-
-            <div class="form-group">
-              <button class="btn btn-primary" type="submit">Register</button>
-              <span>Doesn't have account? <a href="/" th:href="@{/register}">Register</a></span>
-            </div>
-          </form>
+          </div>
         </div>
       </div>
     </div>
