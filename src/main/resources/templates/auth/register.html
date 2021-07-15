@@ -8,7 +8,7 @@
     <div class="row justify-content-center">
       <div class="card col-4">
         <div class="card-body">
-          <h5 class="card-title">Register</h5>
+          <h5 class="card-title text-center">Register</h5>
 
           <p class="text-danger"
              th:if="${#fields.hasGlobalErrors()}"
@@ -24,7 +24,7 @@
 
           <form th:action="@{/register}" th:object="${user}" method="post">
             <div class="form-group">
-              <label for="username" class="control-label">Username</label>
+              <label for="username" class="form-label">Username</label>
               <input type="text"
                      class="form-control"
                      id="username"
@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group">
-              <label for="email" class="control-label">Email</label>
+              <label for="email" class="form-label">Email</label>
               <input type="email"
                      class="form-control"
                      id="email"
@@ -57,7 +57,7 @@
             </div>
 
             <div class="form-group">
-              <label for="password" class="control-label">Password</label>
+              <label for="password" class="form-label">Password</label>
               <input type="password"
                      class="form-control"
                      id="password"
@@ -73,7 +73,7 @@
             </div>
 
             <div class="form-group">
-              <label for="passwordConfirmation" class="control-label">Confirm password</label>
+              <label for="passwordConfirmation" class="form-label">Confirm password</label>
               <input type="password"
                      class="form-control"
                      id="passwordConfirmation"
@@ -88,7 +88,7 @@
               ></div>
             </div>
 
-            <div class="form-group">
+            <div class="form-group mt-3">
               <button class="btn btn-primary" type="submit">Register</button>
               <span>Already registered? <a href="/" th:href="@{/login}">login here</a></span>
             </div>
