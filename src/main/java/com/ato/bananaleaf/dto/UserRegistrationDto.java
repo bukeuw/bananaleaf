@@ -3,8 +3,8 @@ package com.ato.bananaleaf.dto;
 import com.ato.bananaleaf.security.constraint.FieldMatch;
 
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @FieldMatch(first = "password", second = "confirmPassword", message = "Please confirm the password")
 public class UserRegistrationDto {
@@ -16,11 +16,11 @@ public class UserRegistrationDto {
     private String email;
 
     @NotEmpty
-    @Min(6)
+    @Size(min = 6)
     private String password;
 
     @NotEmpty
-    @Min(6)
+    @Size(min = 6)
     private String passwordConfirmation;
 
     public String getUsername() {
