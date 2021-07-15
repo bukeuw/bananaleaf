@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/_dashboard">
+<body>
+
+  <div layout:fragment="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Department</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title">Department List</h5>
+                </div>
+                <div class="col">
+                  <a th:href="@{/department/create}" class="btn btn-sm btn-primary float-end">
+                    Add new deparment
+                  </a>
+                </div>
+              </div>
+
+              <div class="table-responsive">
+                <table class="table table-stripped">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>Name</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr th:if="${#lists.isEmpty(departments)}">
+                      <td colspan="6" class="text-center">
+                        No data yet.
+                        <a th:href="@{/department/create}">Add new department</a>
+                      </td>
+                    </tr>
+
+                    <tr th:each="department, loop : ${departments}">
+                      <td th:text="${loop.index + 1}"></td>
+                      <td th:text="${department.name}"></td>
+                      <td></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
