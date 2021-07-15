@@ -2,16 +2,21 @@
 <html lang="en"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
-      layout:decorate="layout/_main">
+      layout:decorate="layout/_dashboard">
 <body>
 
   <div layout:fragment="content">
-    <div class="box">
-      <p sec:authentication="principal.username"></p>
-      <a sec:authorize="isAuthenticated()" th:href="@{/logout}">logout</a>
+    <div class="container-fluid">
+      <!-- start page title -->
+      <div class="row">
+        <div class="col-12">
+          <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Home</h4>
+          </div>
+        </div>
+      </div>
+      <!-- end page title -->
     </div>
-
-    <p>Home</p>
   </div>
 
 </body>
