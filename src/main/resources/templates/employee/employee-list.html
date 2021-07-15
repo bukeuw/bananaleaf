@@ -23,7 +23,7 @@
                   <h5 class="card-title">Employee List</h5>
                 </div>
                 <div class="col">
-                  <a th:href="@{/employee/create}" class="btn btn-sm btn-primary float-right">
+                  <a th:href="@{/employee/create}" class="btn btn-sm btn-primary float-end">
                     Add new employee
                   </a>
                 </div>
@@ -39,6 +39,7 @@
                       <th>Education</th>
                       <th>Job</th>
                       <th>Department</th>
+                      <th>Actions</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -50,11 +51,13 @@
                     </tr>
 
                     <tr th:each="employee, loop : ${employees}">
-                      <td th:text=""${loop.index + 1}></td>
+                      <td th:text="${loop.index + 1}"></td>
                       <td th:text="${employee.name}"></td>
-                      <td th:text="${employee.dob}"></td>
+                      <td th:text="${#dates.format(employee.dob, 'dd MMMM yyyy')}"></td>
+                      <td th:text="${employee.education}"></td>
                       <td th:text="${employee.job}"></td>
                       <td th:text="${employee.department.name}"></td>
+                      <td></td>
                     </tr>
                   </tbody>
                 </table>
