@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="layout/_dashboard">
+<body>
+  <div layout:fragment="styles">
+    <link th:href="@{/assets/libs/bootstrap-datepicker/css/bootstrap-datepicker.min.css}" rel="stylesheet" type="text/css">
+  </div>
+
+  <div layout:fragment="content">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Employee</h4>
+
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a th:href="@{/employee}">Employee</a></li>
+                <li class="breadcrumb-item active">Create</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Create new Employee</h5>
+
+              <form th:action="@{/employee}" method="post" class="form-horizontal">
+                <div class="form-group">
+                  <label for="name" class="form-label">Name</label>
+                  <input type="text" class="form-control"
+                         id="name" name="name" autofocus
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="dob" class="form-label">DOB</label>
+                  <div class="input-group" id="dobdatepicker">
+                    <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                           data-date-format="yyyy-mm-dd"
+                           data-date-container='#dobdatepicker'
+                           data-provide="datepicker"
+                           name="dob"
+                           id="dob"
+                    >
+
+                    <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="education" class="form-label">Education</label>
+                  <input type="text" class="form-control"
+                         id="education" name="education"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="job" class="form-label">Job</label>
+                  <input type="text" class="form-control"
+                         id="job" name="job"
+                  >
+                </div>
+
+                <div class="form-group">
+                  <label for="departmentId" class="form-label">Department</label>
+                  <select class="form-control" id="departmentId" name="departmentId">
+                    <option th:each="department : ${departments}"
+                            th:value="${department.id}"
+                            th:text="${department.name}">
+                    </option>
+                  </select>
+                </div>
+
+                <div class="form-group mt-2">
+                  <button class="btn btn-primary" type="submit">Save</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div layout:fragment="scripts">
+    <script th:src="@{/assets/libs/bootstrap-datepicker/js/bootstrap-datepicker.min.js}"></script>
+  </div>
+
+</body>
+</html>
