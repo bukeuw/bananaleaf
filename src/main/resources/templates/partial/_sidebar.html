@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body>
+
+<div class="vertical-menu" th:fragment="sidebar">
+
+  <div data-simplebar class="h-100">
+
+    <!--- Sidemenu -->
+    <div id="sidebar-menu">
+      <!-- Left Menu Start -->
+      <ul class="metismenu list-unstyled" id="side-menu">
+        <li class="menu-title">Menu</li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-home-circle"></i>
+            <span>Dashboards</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="/employee">Employee</a></li>
+            <li><a href="/department">Department</a></li>
+            <li><a href="#">Applicant</a></li>
+            <li><a href="#">KPI</a></li>
+          </ul>
+        </li>
+
+        <li class="menu-title">Management</li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bxs-user-detail"></i>
+            <span>User</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="#">User List</a></li>
+            <li><a href="#">Profile</a></li>
+          </ul>
+        </li>
+
+        <li class="menu-title">Pages</li>
+
+        <li>
+          <a href="javascript: void(0);" class="has-arrow waves-effect">
+            <i class="bx bx-file"></i>
+            <span>Utility</span>
+          </a>
+          <ul class="sub-menu" aria-expanded="false">
+            <li><a href="#">Menus</a></li>
+            <li><a href="#">Layout</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </div>
+    <!-- Sidebar -->
+  </div>
+</div>
+
+</body>
+</html>
